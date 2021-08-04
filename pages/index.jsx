@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from "next/link";
 import styles from '../styles/Home.module.css'
-import { Header } from "./header";
-import { Headog } from "./headog";
-import { Footer } from "./footer";
+import { Header } from "../components/header";
+import { Headog } from "../components/headog";
+import { Footer } from "../components/footer";
 import { useState, useRef } from "react";
 
 function play() {
