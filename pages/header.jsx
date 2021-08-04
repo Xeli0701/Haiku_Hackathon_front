@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const Header = () => {
   return (
-    <div class="container mx-auto">
+    <div className="container mx-auto">
         <header className="flex justify-between items-center">
             <Link href="/">
             <a>

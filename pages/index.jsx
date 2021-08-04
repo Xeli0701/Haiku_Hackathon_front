@@ -35,7 +35,7 @@ export default function Home() {
       <Header />
       <main className="container mx-auto">
         <div className="flex justify-center">
-          <img className={`haiku_image px-5`} src={dogURL} alt="dog" width={300} height={200}></img>
+          <Image className={`haiku_image px-5`} src={dogURL} alt="dog" width={300} height={200}></Image>
           <div className="static flex justify-center px-5 py-10">
             <div id="haiku1" className={`haiku fade-in-bottom text-4xl px-5 py-20`}>{haiku3}</div>
             <div id="haiku2" className={`haiku fade-in-bottom text-4xl px-5 py-10`}>{haiku2}</div>
