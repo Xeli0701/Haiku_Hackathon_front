@@ -1,7 +1,8 @@
 module.exports = {
   purge: [
     "./public/**/*.html",
-    "./src/**/*.{js,jsx,ts,tsx}", // srcディレクトリにあるjs,jsx,ts,tsxを監視して軽量化してくれる
+    "./pages/*.{js,jsx,ts,tsx}", // srcディレクトリにあるjs,jsx,ts,tsxを監視して軽量化してくれる
+    "./components/*.{js,jsx,ts,tsx}",
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
