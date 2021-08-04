@@ -16,7 +16,7 @@ export const Header = () => {
             </a>
             </Link>
             <nav>
-            <div>写真をアップロードしたら俳句を作成します</div>
+            <div>俳句を作成します。正岡子規っぽいものができます。</div>
             </nav>
         </header>
     </div>
