@@ -13,6 +13,7 @@ export const Footer = () => {
         <div className="m-4 text-lg text-white">使い方</div>
         <div className="m-1 ml-16 text-sm text-white">PRESS TO GENERATE HAIKUボタンを押すと、俳句を生成します。</div>
         <div className="m-1 ml-16 text-sm text-white">SELECT PICTURE FILEボタンを押すと、画像をアップロードして、俳句を生成します。</div>
+        <div className="m-1 ml-16 text-sm text-white">音声再生ボタンを押すと、<a href="https://developer.mozilla.org/ja/docs/Web/API/Web_Speech_API" rel="noreferrer" target="_blank" className="text-blue-500 font-bold rounded">Web Speech API</a>の合成音声が流れます。</div>
         <div className="m-1 ml-16 text-sm text-white">生成元データとして、<a href="http://www.haiku-tosasaki.server-shared.com/haiku6.html" rel="noreferrer" target="_blank" className="text-blue-500 font-bold rounded">現代俳句抄</a>より正岡子規の俳句を抽出しています。</div>
     <div className="m-4 text-lg text-white">Repository</div>
         <div className="container">
