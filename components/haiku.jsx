@@ -44,9 +44,9 @@ export const Haiku = () => {
       <div className="justify-evenly py-4 sm:py-10 sm:flex">
           <Image id="haiku_image" className={`object-cover haiku_image fade-in-bottom3 px-5`} src={userImage} alt="俳句のイメージ" width={400} height={400}></Image>
           <div className="flex justify-evenly px-5 py-10">
-              <div id="haiku3" className={`haiku fade-in-bottom3 text-right  text-2xl px-5 pt-10 sm:text-4xl`}>{haiku3}</div>
-              <div id="haiku2" className={`haiku fade-in-bottom2 text-center text-2xl px-5 py-10 sm:text-4xl`}>{haiku2}</div>
-              <div id="haiku1" className={`haiku fade-in-bottom  text-left   text-2xl px-5 pb-10 sm:text-4xl`}>{haiku1}</div>
+              <div id="haiku3" className={`haiku fade-in-bottom3 text-right  text-4xl px-5 pt-10 sm:text-4xl`}>{haiku3}</div>
+              <div id="haiku2" className={`haiku fade-in-bottom2 text-center text-4xl px-5 py-10 sm:text-4xl`}>{haiku2}</div>
+              <div id="haiku1" className={`haiku fade-in-bottom  text-left   text-4xl px-5 pb-10 sm:text-4xl`}>{haiku1}</div>
           </div>
       </div>
 
