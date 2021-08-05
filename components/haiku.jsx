@@ -33,7 +33,6 @@ export const Haiku = () => {
           <Image src={"/logo.webp"} alt="ロゴ" width={400} height={100} />
         </div>
       </div>
-      <div class="img"></div>
 
       <div className="flex justify-evenly py-20">
           <Image id="haiku_image" className={`haiku_image fade-in-bottom3 px-5`} src={userImage} width={400} height={400}></Image>
