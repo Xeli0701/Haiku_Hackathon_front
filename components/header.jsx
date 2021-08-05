@@ -3,12 +3,12 @@ import Link from "next/link";
 
 export const Header = () => {
   return (
-    <div className="container mx-auto">
-        <header className="flex justify-between items-center">
+    <div className="container mx-auto my-5">
+        <header className="flex justify-evenly items-center">
             <Link href="/">
             <a>
                 <Image
-                src={"/logo.png"}
+                src={"/logo.webp"}
                 alt="ロゴ"
                 width={400}
                 height={100}

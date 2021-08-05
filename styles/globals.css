@@ -94,6 +94,52 @@
 	}
 }
 
+.fade-in-bottom2 {
+	opacity: 0;
+	animation: fadein-bottom 2.5s .3s ease-out forwards;
+}
+.fade-in-bottom2 {
+	opacity: 0;
+    animation-name: fadein-bottom;
+	animation-duration: 2.5s;
+	animation-delay: .3s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+@keyframes fadein-bottom2 {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fade-in-bottom3 {
+	opacity: 0;
+	animation: fadein-bottom 3.5s .3s ease-out forwards;
+}
+.fade-in-bottom3 {
+	opacity: 0;
+    animation-name: fadein-bottom;
+	animation-duration: 3.5s;
+	animation-delay: .3s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+@keyframes fadein-bottom3 {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 @media (max-width: 400px) {
   .modal__closeBtn{
     position: fixed;

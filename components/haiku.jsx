@@ -1,69 +1,82 @@
 import Image from 'next/image'
-import Link from "next/link";
-import styles from '../styles/Home.module.css'
-import { Header } from "../components/header";
-import { Headog } from "../components/headog";
-import { Footer } from "../components/footer";
 import { useState, useRef } from "react";
 
 function play() {
   const element1 = document.getElementById('haiku1');
   const element2 = document.getElementById('haiku2');
   const element3 = document.getElementById('haiku3');
+  const element4 = document.getElementById('haiku_image');
   element1.className = "text-opacity-100";
   element2.className = "text-opacity-100";
   element3.className = "text-opacity-100";
+  element4.className = "haiku_image";
   window.requestAnimationFrame(function(time) {
     window.requestAnimationFrame(function(time) {
-      element1.className = "haiku fade-in-bottom text-4xl px-5 py-20";
-      element2.className = "haiku fade-in-bottom text-4xl px-5 py-10";
-      element3.className = "haiku fade-in-bottom text-4xl px-5 ";
+      element1.className = "haiku fade-in-bottom text-left   text-4xl px-5 pb-10";
+      element2.className = "haiku fade-in-bottom2 text-center text-4xl px-5 py-10";
+      element3.className = "haiku fade-in-bottom3 text-right  text-4xl px-5 pt-10";
+      element4.className = "haiku_image fade-in-bottom3 px-5";
     });
   });
 }
 
 export const Haiku = () => {
+  const [userImage, setImage] = useState("https://images.dog.ceo/breeds/cairn/n02096177_1596.jpg");
   const [haiku3, setHaiku3] = useState("ありますね");
   const [haiku2, setHaiku2] = useState("俳句は風情が");
   const [haiku1, setHaiku1] = useState("５７５");
-  const [dogURL, setDogUrl] = useState("https://images.dog.ceo/breeds/cairn/n02096177_1596.jpg");
 
   return (
     <main className="container mx-auto">
-    <div className="flex justify-center">
-        <Image className={`haiku_image px-5`} src={dogURL} alt="dog" width={300} height={200}></Image>
-        <div className="static flex justify-center px-5 py-10">
-        <div id="haiku1" className={`haiku fade-in-bottom text-4xl px-5 py-20`}>{haiku3}</div>
-        <div id="haiku2" className={`haiku fade-in-bottom text-4xl px-5 py-10`}>{haiku2}</div>
-        <div id="haiku3" className={`haiku fade-in-bottom text-4xl px-5 `}>{haiku1}</div>
-        </div>
-    </div>
-    <div className="flex justify-center py-20">
-        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+      <div className="flex justify-evenly py-20">
+          <Image id="haiku_image" className={`haiku_image fade-in-bottom3 px-5`} src={userImage} width={500} height={500}></Image>
+          <div className="static flex px-5 py-10">
+              <div id="haiku3" className={`haiku fade-in-bottom3 text-right  text-4xl px-5 pt-10`}>{haiku3}</div>
+              <div id="haiku2" className={`haiku fade-in-bottom2 text-center text-4xl px-5 py-10`}>{haiku2}</div>
+              <div id="haiku1" className={`haiku fade-in-bottom text-left   text-4xl px-5 pb-10`}>{haiku1}</div>
+          </div>
+      </div>
+      <div className="flex justify-evenly py-10">
+        <button className="text-base leading-normal w-64 flex flex-col items-center px-4 py-6 bg-white rounded-md shadow-md tracking-wide uppercase border border-blue cursor-pointer hover:bg-purple-600 hover:text-white text-purple-600 ease-linear transition-all duration-150"
         onClick={() => fetch("https://haiku-hackathon-back.herokuapp.com/haiku/a")
-            .then(response => response.json())
+            .then((response) => response.json())
             .then((data) => {
             if (data.status === "success") {
                 setHaiku3(data.message3)
                 setHaiku2(data.message2)
                 setHaiku1(data.message1)
-                play()
+                setTimeout(play(),500)
             }
             })}
         >Press to Generate Haiku</button>
-    </div>
-    
-    <div>
-    <button
-        onClick={() => fetch("https://dog.ceo/api/breeds/image/random")
-        .then(response => response.json())
-        .then((data) => {
-            if (data.status === "success") {
-            setDogUrl(data.message)
-            }
-        })}
-    >Press to Change Dog</button>
-    </div>
+
+        <label
+        className="w-64 flex flex-col items-center px-4 py-6 bg-white rounded-md shadow-md tracking-wide uppercase border border-blue cursor-pointer hover:bg-purple-600 hover:text-white text-purple-600 ease-linear transition-all duration-150" >
+          <i className="fas fa-cloud-upload-alt fa-3x"></i>
+          <span className="text-base leading-normal">Select Picture File</span>
+          <input id="file" name="file" type="file" className="hidden"
+            onChange = {() => fetch("https://haiku-hackathon-back.herokuapp.com/haiku/a")
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.status === "success") {
+                  var img = document.getElementById('file').files[0];
+                  let reader = new FileReader()
+                  if (img !== undefined){
+                    reader.readAsDataURL(img)
+                    reader.onload = function() {
+                      setImage(reader.result)
+                    }
+                  }
+                  setHaiku3(data.message3)
+                  setHaiku2(data.message2)
+                  setHaiku1(data.message1)
+                  play()
+                }
+              }
+            )}
+          />
+        </label>
+      </div>
     </main>
   )
 }
