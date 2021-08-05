@@ -28,8 +28,15 @@ export const Haiku = () => {
 
   return (
     <main className="container mx-auto">
+      <div className="w-full h-full mx-auto py-96 shutter">
+        <div className="flex fade-in-bottom2 justify-evenly">
+          <Image src={"/logo.webp"} alt="ロゴ" width={400} height={100} />
+        </div>
+      </div>
+      <div class="img"></div>
+
       <div className="flex justify-evenly py-20">
-          <Image id="haiku_image" className={`haiku_image fade-in-bottom3 px-5`} src={userImage} width={500} height={500}></Image>
+          <Image id="haiku_image" className={`haiku_image fade-in-bottom3 px-5`} src={userImage} width={400} height={400}></Image>
           <div className="static flex px-5 py-10">
               <div id="haiku3" className={`haiku fade-in-bottom3 text-right  text-4xl px-5 pt-10`}>{haiku3}</div>
               <div id="haiku2" className={`haiku fade-in-bottom2 text-center text-4xl px-5 py-10`}>{haiku2}</div>
@@ -70,7 +77,7 @@ export const Haiku = () => {
                   setHaiku3(data.message3)
                   setHaiku2(data.message2)
                   setHaiku1(data.message1)
-                  play()
+                  setTimeout(play(),500)
                 }
               }
             )}
