@@ -12,7 +12,7 @@ function play() {
   element4.className = "haiku_image";
   window.requestAnimationFrame(function(time) {
     window.requestAnimationFrame(function(time) {
-      element1.className = "haiku fade-in-bottom text-left   text-4xl px-5 pb-10";
+      element1.className = "haiku fade-in-bottom  text-left   text-4xl px-5 pb-10";
       element2.className = "haiku fade-in-bottom2 text-center text-4xl px-5 py-10";
       element3.className = "haiku fade-in-bottom3 text-right  text-4xl px-5 pt-10";
       element4.className = "haiku_image fade-in-bottom3 px-5";
@@ -27,7 +27,7 @@ export const Haiku = () => {
   const [haiku1, setHaiku1] = useState("５７５");
 
   return (
-    <main className="container mx-auto">
+    <main id="main_container" className="container mx-auto">
       <div className="w-full h-full mx-auto py-96 shutter">
         <div className="flex fade-in-bottom2 justify-evenly">
           <Image src={"/logo.webp"} alt="ロゴ" width={400} height={100} />
@@ -35,11 +35,11 @@ export const Haiku = () => {
       </div>
 
       <div className="flex justify-evenly py-20">
-          <Image id="haiku_image" className={`haiku_image fade-in-bottom3 px-5`} src={userImage} width={400} height={400}></Image>
+          <Image id="haiku_image" className={`haiku_image fade-in-bottom3 px-5`} src={userImage} alt="俳句のイメージ" width={400} height={400}></Image>
           <div className="static flex px-5 py-10">
               <div id="haiku3" className={`haiku fade-in-bottom3 text-right  text-4xl px-5 pt-10`}>{haiku3}</div>
               <div id="haiku2" className={`haiku fade-in-bottom2 text-center text-4xl px-5 py-10`}>{haiku2}</div>
-              <div id="haiku1" className={`haiku fade-in-bottom text-left   text-4xl px-5 pb-10`}>{haiku1}</div>
+              <div id="haiku1" className={`haiku fade-in-bottom  text-left   text-4xl px-5 pb-10`}>{haiku1}</div>
           </div>
       </div>
       <div className="flex justify-evenly py-10">
