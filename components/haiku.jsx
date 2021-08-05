@@ -41,12 +41,12 @@ export const Haiku = () => {
         </div>
       </div>
 
-      <div className="flex justify-evenly py-10">
-          <Image id="haiku_image" className={`haiku_image fade-in-bottom3 px-5`} src={userImage} alt="俳句のイメージ" width={400} height={400}></Image>
-          <div className="static flex px-5 py-10">
-              <div id="haiku3" className={`haiku fade-in-bottom3 text-right  text-4xl px-5 pt-10`}>{haiku3}</div>
-              <div id="haiku2" className={`haiku fade-in-bottom2 text-center text-4xl px-5 py-10`}>{haiku2}</div>
-              <div id="haiku1" className={`haiku fade-in-bottom  text-left   text-4xl px-5 pb-10`}>{haiku1}</div>
+      <div className="justify-evenly py-4 sm:py-10 sm:flex">
+          <Image id="haiku_image" className={`object-cover haiku_image fade-in-bottom3 px-5`} src={userImage} alt="俳句のイメージ" width={400} height={400}></Image>
+          <div className="flex justify-evenly px-5 py-10">
+              <div id="haiku3" className={`haiku fade-in-bottom3 text-right  text-2xl px-5 pt-10 sm:text-4xl`}>{haiku3}</div>
+              <div id="haiku2" className={`haiku fade-in-bottom2 text-center text-2xl px-5 py-10 sm:text-4xl`}>{haiku2}</div>
+              <div id="haiku1" className={`haiku fade-in-bottom  text-left   text-2xl px-5 pb-10 sm:text-4xl`}>{haiku1}</div>
           </div>
       </div>
 
@@ -60,7 +60,7 @@ export const Haiku = () => {
       </div>
 
       <div className="flex justify-evenly py-10">
-        <button className="text-base leading-normal w-64 flex flex-col items-center px-4 py-6 bg-white rounded-md shadow-md tracking-wide uppercase border border-blue cursor-pointer hover:bg-purple-600 hover:text-white text-purple-600 ease-linear transition-all duration-150"
+        <button className="text-base leading-normal w-48 flex flex-col items-center px-4 py-6 bg-white rounded-md shadow-md tracking-wide uppercase border border-blue cursor-pointer hover:bg-purple-600 hover:text-white text-purple-600 ease-linear transition-all duration-150"
         onClick={() => fetch("https://haiku-hackathon-back.herokuapp.com/haiku/a")
             .then((response) => response.json())
             .then((data) => {
@@ -71,12 +71,12 @@ export const Haiku = () => {
                 setTimeout(play(),500)
             }
             })}
-        >Press to Generate Haiku</button>
+        >Generate Haiku</button>
 
         <label
-        className="w-64 flex flex-col items-center px-4 py-6 bg-white rounded-md shadow-md tracking-wide uppercase border border-blue cursor-pointer hover:bg-purple-600 hover:text-white text-purple-600 ease-linear transition-all duration-150" >
+        className="w-48 flex flex-col items-center px-4 py-6 bg-white rounded-md shadow-md tracking-wide uppercase border border-blue cursor-pointer hover:bg-purple-600 hover:text-white text-purple-600 ease-linear transition-all duration-150" >
           <i className="fas fa-cloud-upload-alt fa-3x"></i>
-          <span className="text-base leading-normal">Select Picture File</span>
+          <span className="text-base leading-normal">Pic 2 Haiku</span>
           <input id="file" name="file" type="file" className="hidden"
             onChange = {() => fetch("https://haiku-hackathon-back.herokuapp.com/haiku/a")
               .then((response) => response.json())
