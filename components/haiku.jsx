@@ -28,7 +28,7 @@ function readHaiku() {
 }
 
 export const Haiku = () => {
-  const [userImage, setImage] = useState("https://images.dog.ceo/breeds/cairn/n02096177_1596.jpg");
+  const [userImage, setImage] = useState("/placeholder.jpg");
   const [haiku3, setHaiku3] = useState("ありますね");
   const [haiku2, setHaiku2] = useState("俳句は風情が");
   const [haiku1, setHaiku1] = useState("ごおしちご");
@@ -51,13 +51,12 @@ export const Haiku = () => {
       </div>
 
       <div className="flex justify-evenly">
-        <button className="text-base leading-normal w-32 flex flex-col items-center px-4 py-6 bg-white rounded-md shadow-md tracking-wide uppercase border border-blue cursor-pointer hover:bg-purple-600 hover:text-white text-purple-600 ease-linear transition-all duration-150"
+        <button className="text-base leading-normal w-32 flex flex-col items-center px-4 py-6 rounded-md tracking-wide bg-white uppercase border border-blue cursor-pointer hover:bg-purple-600 hover:text-white text-purple-600 ease-linear transition-all duration-150"
           onClick={() => {
             let uttr = new SpeechSynthesisUtterance(readHaiku())
             speechSynthesis.speak(uttr)
           }
-        }>音声再生
-        </button>
+        }><Image src={"/play.svg"} alt="ロゴ" width={50} height={50} /></button>
       </div>
 
       <div className="flex justify-evenly py-10">
